@@ -11,7 +11,7 @@ class Post(models.Model):  # models.Model significa que Post es un modelo de Dja
     # este es una relación (link) con otro modelo.
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    # así es como defines un texto con un número limitado de caracteres.
+    # así es como defines un texto con un número limitado de caracteres titulo.
     title = models.CharField(max_length=200)
     # este es para texto largo sin límite. Suena perfecto para el contenido de la entrada del blog
     text = models.TextField()

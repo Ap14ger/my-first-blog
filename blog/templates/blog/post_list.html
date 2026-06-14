@@ -4,30 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Django Girls blog</title>
+    <style>
+      .parrafo {
+        color: rgb(7, 7, 7);
+      }
+    </style>
   </head>
   <body>
     <div>
       <h1><a href="/">Django Girls Blog</a></h1>
+      <img src="/blog/static/imagenes/carro.jpg" alt="" />
     </div>
+
+    {% for post in posts %}
     <div>
-      <p>Published: 04/11/2026, 8:57</p>
-      <h2><a href="">My first post</a></h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, cum
-        aliquam quos excepturi incidunt ratione sunt veritatis asperiores, hic
-        impedit, ducimus modi temporibus? Magni nam eligendi, modi accusamus
-        quos autem?
-      </p>
+      <h2><a href="">{{ post.title }}</a></h2>
+      <p>{{ post.text|linebreaksbr }}</p>
+      <p>publicado: {{ post.published_date }}</p>
     </div>
-    <div>
-      <h2><a href="">My second post</a></h2>
-      <p>Published: 04/11/2026, 9:03</p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-        laboriosam ducimus ab similique pariatur aliquam illum necessitatibus
-        cumque explicabo maxime corporis suscipit magnam, soluta esse eum
-        deleniti eius maiores impedit.
-      </p>
-    </div>
+    {% endfor %}
   </body>
 </html>
